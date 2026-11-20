@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lamsa | لَمْسَة — Creative Media & Design</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">LAMSA</span>
+      <span class="logo-dot"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">الرئيسية</a></li>
+      <li><a href="#services">خدماتنا</a></li>
+      <li><a href="#portfolio">أعمالنا</a></li>
+      <li><a href="#pricing">الأسعار</a></li>
+      <li><a href="#reviews">آراء العملاء</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">✦ وكالة إبداعية متخصصة</p>
+      <h1>فكرتك تستاهل<br/><span class="highlight">أحسن من كده</span></h1>
+      <p class="hero-sub">بنصمم لك هويتك البصرية، لوجو احترافي، ومونتاج فيديوهات يخلي براندك يتكلم عنك حتى لما إنت مش موجود.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">ابدأ مشروعك 🚀</a>
+        <a href="#portfolio" class="btn-outline">شوف أعمالنا</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="aperture-icon">
+        <div class="aperture-ring">
+          <div class="aperture-blade"></div>
+          <div class="aperture-blade"></div>
+          <div class="aperture-blade"></div>
+          <div class="aperture-blade"></div>
+          <div class="aperture-blade"></div>
+          <div class="aperture-blade"></div>
+        </div>
+        <span class="aperture-letter">L</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="section-header">
+      <p class="section-tag">ايه اللي بنعمله</p>
+      <h2>خدماتنا</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3>تصميم اللوجو</h3>
+        <p>بنصمملك هوية بصرية كاملة تعبر عن شركتك وتفرق عن المنافسين من أول نظرة.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-film"></i></div>
+        <h3>مونتاج الفيديو</h3>
+        <p>بنعمل مونتاج احترافي لفيديوهات السوشيال ميديا، الريلز، والإعلانات بمستوى عالي.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>الهوية البصرية</h3>
+        <p>بنبني لك هوية براند كاملة من الألوان والخطوط لتصميم منشوراتك على السوشيال ميديا.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <h3>تصميم المحتوى</h3>
+        <p>بوسترات، إعلانات، وتصاميم سوشيال ميديا بشكل جذاب وعصري يلفت الأنظار.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio">
+    <div class="section-header">
+      <p class="section-tag">شغلنا بيتكلم عنا</p>
+      <h2>أعمالنا</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-placeholder logo-type">
+          <i class="fa-solid fa-pen-nib"></i>
+          <p>Logo Design</p>
+        </div>
+        <div class="portfolio-info">
+          <h4>هوية بصرية كاملة</h4>
+          <span>Logo Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-placeholder video-type">
+          <i class="fa-solid fa-clapperboard"></i>
+          <p>Video Edit</p>
+        </div>
+        <div class="portfolio-info">
+          <h4>مونتاج إعلان</h4>
+          <span>Video Editing</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-placeholder brand-type">
+          <i class="fa-solid fa-layer-group"></i>
+          <p>Brand Identity</p>
+        </div>
+        <div class="portfolio-info">
+          <h4>هوية براند ناشئ</h4>
+          <span>Brand Identity</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-placeholder social-type">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <p>Social Media</p>
+        </div>
+        <div class="portfolio-info">
+          <h4>تصاميم سوشيال ميديا</h4>
+          <span>Content Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing">
+    <div class="section-header">
+      <p class="section-tag">بكم؟</p>
+      <h2>الأسعار</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-badge">Basic</div>
+        <div class="pricing-price">تواصل معنا</div>
+        <ul class="pricing-features">
+          <li><i class="fa-solid fa-check"></i> تصميم لوجو واحد</li>
+          <li><i class="fa-solid fa-check"></i> تعديلان مجانيان</li>
+          <li><i class="fa-solid fa-check"></i> تسليم PNG عالي الجودة</li>
+          <li class="off"><i class="fa-solid fa-xmark"></i> ملف مفتوح (AI/PSD)</li>
+        </ul>
+        <a href="#contact" class="btn-outline">اطلب الآن</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">⭐ الأكثر طلباً</div>
+        <div class="pricing-price">تواصل معنا</div>
+        <ul class="pricing-features">
+          <li><i class="fa-solid fa-check"></i> لوجو + هوية بصرية كاملة</li>
+          <li><i class="fa-solid fa-check"></i> تعديلات غير محدودة</li>
+          <li><i class="fa-solid fa-check"></i> ملف مفتوح (AI/PSD)</li>
+          <li><i class="fa-solid fa-check"></i> تصاميم سوشيال ميديا</li>
+        </ul>
+        <a href="#contact" class="btn-primary">اطلب الآن</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-badge">Video</div>
+        <div class="pricing-price">تواصل معنا</div>
+        <ul class="pricing-features">
+          <li><i class="fa-solid fa-check"></i> مونتاج فيديو احترافي</li>
+          <li><i class="fa-solid fa-check"></i> موسيقى وتأثيرات</li>
+          <li><i class="fa-solid fa-check"></i> تعديل واحد مجاني</li>
+          <li><i class="fa-solid fa-check"></i> تسليم بجودة عالية</li>
+        </ul>
+        <a href="#contact" class="btn-outline">اطلب الآن</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="reviews">
+    <div class="section-header">
+      <p class="section-tag">الناس بتقول إيه</p>
+      <h2>آراء عملاؤنا</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"شغل محترم جداً، اللوجو طلع أحسن من اللي كنت متخيله، وبيتعاملوا بجدية."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">أ</div>
+          <span>أحمد، صاحب بيزنس</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"تعاملت معاهم في مونتاج إعلان، النتيجة فاقت توقعاتي وفي وقت قياسي."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">س</div>
+          <span>سارة، صاحبة براند</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"ناس محترفين وعندهم ذوق عالي جداً في التصميم، هتعامل معاهم تاني."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">م</div>
+          <span>محمد، رائد أعمال</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="section-header">
+      <p class="section-tag">خلينا نتكلم</p>
+      <h2>تواصل معنا</h2>
+      <p class="section-sub">عندك مشروع أو فكرة؟ إبعتلنا وسيبها علينا 🚀</p>
+    </div>
+    <div class="contact-wrapper">
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label>اسمك</label>
+          <input type="text" placeholder="اكتب اسمك هنا" required />
+        </div>
+        <div class="form-group">
+          <label>رقم الواتساب</label>
+          <input type="text" placeholder="01XXXXXXXXX" required />
+        </div>
+        <div class="form-group">
+          <label>الخدمة المطلوبة</label>
+          <select>
+            <option>تصميم لوجو</option>
+            <option>مونتاج فيديو</option>
+            <option>هوية بصرية كاملة</option>
+            <option>تصاميم سوشيال ميديا</option>
+            <option>غير ده</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>تفاصيل المشروع</label>
+          <textarea rows="4" placeholder="اكتب تفاصيل اللي بتدور عليه..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">إرسال الطلب 🚀</button>
+      </form>
+      <div class="contact-info">
+        <h3>أو تواصل معنا مباشرة</h3>
+        <div class="social-links">
+          <a href="#" class="social-link whatsapp"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+          <a href="#" class="social-link facebook"><i class="fa-brands fa-facebook"></i> فيسبوك</a>
+          <a href="#" class="social-link instagram"><i class="fa-brands fa-instagram"></i> إنستجرام</a>
+          <a href="#" class="social-link tiktok"><i class="fa-brands fa-tiktok"></i> تيك توك</a>
+        </div>
+        <div class="response-badge">⚡ بنرد في أقل من 24 ساعة</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">LAMSA <span>✦</span> لَمْسَة</div>
+    <p>بنحول فكرتك لبراند يلفت الأنظار 🎯</p>
+    <p class="footer-copy">© 2025 Lamsa Creative Media & Design. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
