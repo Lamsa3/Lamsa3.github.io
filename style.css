@@ -407,6 +407,7 @@ section { padding: 90px 6%; }
 
 .social-link:hover { transform: translateX(-4px); }
 .social-link.whatsapp:hover { border-color: #25D366; color: #25D366; }
+.social-link.phone:hover { border-color: #FF6500; color: #FF6500; }
 .social-link.facebook:hover { border-color: #1877F2; color: #1877F2; }
 .social-link.instagram:hover { border-color: #E4405F; color: #E4405F; }
 .social-link.tiktok:hover { border-color: var(--white); }
