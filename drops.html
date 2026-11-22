@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drops | دروبس — اختار طباعتك</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ===== DROPS PAGE EXCLUSIVE STYLES ===== */
+    :root {
+      --drops-accent: #FF6500;
+      --drops-bg: #0a0a0a;
+      --drops-card: #141414;
+      --drops-border: #222;
+      --drops-gold: #c5a072;
+    }
+
+    .drops-nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .drops-nav-back:hover { color: var(--orange); }
+
+    /* ===== HERO SECTION ===== */
+    .drops-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 6% 80px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,101,0,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 100%, rgba(197,160,114,0.08) 0%, transparent 50%),
+                  #0a0a0a;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .drops-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+
+    .drops-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,101,0,0.12);
+      border: 1.5px solid rgba(255,101,0,0.4);
+      color: var(--drops-accent);
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 8px 22px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .drops-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      letter-spacing: -1px;
+    }
+
+    .drops-hero h1 span {
+      color: var(--drops-accent);
+    }
+
+    .drops-hero-ar {
+      font-family: 'Cairo', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+
+    .drops-hook {
+      max-width: 680px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .drops-hook strong {
+      color: var(--drops-gold);
+    }
+
+    .drops-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn-drops-order {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--drops-accent);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 15px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(255,101,0,0.35);
+    }
+    .btn-drops-order:hover {
+      background: #e55a00;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(255,101,0,0.5);
+    }
+
+    .btn-drops-browse {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      border: 2px solid #333;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 15px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-drops-browse:hover {
+      border-color: var(--drops-accent);
+      color: var(--drops-accent);
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .drops-how {
+      padding: 100px 6%;
+      background: #0d0d0d;
+    }
+
+    .drops-how .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .drops-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .drops-step {
+      background: var(--drops-card);
+      border: 1px solid var(--drops-border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .drops-step:hover {
+      border-color: var(--drops-accent);
+      transform: translateY(-6px);
+    }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: rgba(255,101,0,0.15);
+      border: 2px solid var(--drops-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--drops-accent);
+      margin: 0 auto 20px;
+    }
+
+    .drops-step h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .drops-step p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ===== PRODUCTS SECTION ===== */
+    .drops-products {
+      padding: 100px 6%;
+      background: #0a0a0a;
+    }
+
+    .drops-products .section-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .drops-filter-hint {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 48px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--drops-card);
+      border: 1px solid var(--drops-border);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--drops-accent);
+      box-shadow: 0 20px 50px rgba(255,101,0,0.15);
+    }
+
+    .product-visual {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pv-tshirt { background: linear-gradient(135deg, #1a1a1a 0%, #111 100%); }
+    .pv-hoodie { background: linear-gradient(135deg, #161a1f 0%, #0d1117 100%); }
+    .pv-pants  { background: linear-gradient(135deg, #1a1518 0%, #110e14 100%); }
+
+    .product-mockup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mockup-icon {
+      font-size: 5rem;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
+    }
+
+    .mockup-print-badge {
+      background: rgba(255,101,0,0.15);
+      border: 1px solid rgba(255,101,0,0.5);
+      color: var(--drops-accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-new-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--drops-accent);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 900;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+
+    .product-info {
+      padding: 24px;
+    }
+
+    .product-info h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .product-tag {
+      background: #1f1f1f;
+      border: 1px solid #2e2e2e;
+      color: #bbb;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .product-order-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: var(--drops-accent);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      padding: 13px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .product-order-btn:hover {
+      background: #e55a00;
+      transform: scale(1.02);
+    }
+
+    /* ===== CUSTOM PRINT SECTION ===== */
+    .drops-print {
+      padding: 100px 6%;
+      background: linear-gradient(135deg, #0f0a06 0%, #0d0d0d 50%, #060a0f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .drops-print::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,101,0,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .print-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .print-hook-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(197,160,114,0.1);
+      border: 1.5px solid rgba(197,160,114,0.4);
+      color: var(--drops-gold);
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 8px 22px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+    }
+
+    .print-inner h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .print-inner h2 span {
+      color: var(--drops-accent);
+    }
+
+    .print-inner p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    .print-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .print-option {
+      background: rgba(255,255,255,0.03);
+      border: 1.5px solid #222;
+      border-radius: 18px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .print-option:hover {
+      border-color: var(--drops-accent);
+      background: rgba(255,101,0,0.05);
+    }
+
+    .print-option-icon {
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .print-option h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .print-option p {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .print-cta-block {
+      background: linear-gradient(135deg, rgba(255,101,0,0.12), rgba(255,101,0,0.04));
+      border: 1.5px solid rgba(255,101,0,0.3);
+      border-radius: 24px;
+      padding: 40px;
+    }
+
+    .print-cta-block h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .print-cta-block p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+
+    .print-steps-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .print-step-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #2a2a2a;
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ccc;
+    }
+
+    .print-step-pill span.pill-num {
+      width: 24px;
+      height: 24px;
+      background: var(--drops-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* ===== DROPS CONTACT ===== */
+    .drops-contact {
+      padding: 100px 6%;
+      background: #0d0d0d;
+    }
+
+    .drops-contact-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .drops-contact-inner h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .drops-contact-inner p {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .drops-form {
+      background: var(--drops-card);
+      border: 1px solid var(--drops-border);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: right;
+    }
+
+    .drops-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .drops-form label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+
+    .drops-form input,
+    .drops-form select,
+    .drops-form textarea {
+      width: 100%;
+      background: #1a1a1a;
+      border: 1.5px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 13px 16px;
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .drops-form input:focus,
+    .drops-form select:focus,
+    .drops-form textarea:focus {
+      border-color: var(--drops-accent);
+    }
+
+    .drops-form input::placeholder,
+    .drops-form textarea::placeholder {
+      color: #555;
+    }
+
+    .drops-form select option {
+      background: #1a1a1a;
+    }
+
+    .btn-drops-submit {
+      width: 100%;
+      background: var(--drops-accent);
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 16px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-drops-submit:hover {
+      background: #e55a00;
+      transform: translateY(-2px);
+    }
+
+    .drops-whatsapp-alt {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(37,211,102,0.12);
+      border: 1.5px solid #25D366;
+      color: #25D366;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 15px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .drops-whatsapp-alt:hover {
+      background: rgba(37,211,102,0.2);
+      transform: translateY(-2px);
+    }
+
+    /* ===== DROPS FOOTER ===== */
+    .drops-footer {
+      padding: 36px 6%;
+      background: #080808;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .drops-footer-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .drops-footer-brand span { color: var(--drops-accent); }
+
+    .drops-footer p {
+      color: var(--gray);
+      font-size: 0.82rem;
+    }
+
+    .nav-drops-link {
+      background: rgba(255,101,0,0.15) !important;
+      border: 1.5px solid rgba(255,101,0,0.5) !important;
+      color: var(--orange) !important;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-weight: 800 !important;
+      transition: all 0.3s !important;
+    }
+    .nav-drops-link:hover {
+      background: rgba(255,101,0,0.3) !important;
+      color: #fff !important;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .drops-hero h1 { font-size: 2.4rem; }
+      .drops-steps, .print-options { grid-template-columns: 1fr 1fr; }
+      .drops-form { padding: 28px 20px; }
+      .drops-footer { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .drops-steps, .print-options { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">DROPS</span>
+      <span class="logo-dot"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#drops-products">المنتجات</a></li>
+      <li><a href="#drops-print">طباعة مخصصة</a></li>
+      <li><a href="#drops-order">اطلب دلوقتي</a></li>
+      <li><a href="index.html">↩ Lamsa Agency</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="drops-hero">
+    <div class="drops-eyebrow">
+      <i class="fa-solid fa-fire"></i>
+      DROPS — ملابس شبابية بطابعك
+    </div>
+    <h1>اختار.<br/>صمم.<span> Drop.</span></h1>
+    <div class="drops-hero-ar">تيشرتات وهوديز وبنطلونات — بطباعة تعبر عنك</div>
+    <p class="drops-hook">
+      مش لازم تشتري اللي موجود. عندنا <strong>تيشرتات وهوديز وبنطلونات سادة</strong> باللون اللي إنت عايزه،
+      وبنطبع عليها <strong>الطبعة اللي إنت تختارها</strong>. أوردرك هو الديزاين بتاعك.
+    </p>
+    <div class="drops-cta-row">
+      <a href="#drops-order" class="btn-drops-order">
+        <i class="fa-solid fa-cart-shopping"></i>
+        اطلب دلوقتي
+      </a>
+      <a href="#drops-products" class="btn-drops-browse">
+        <i class="fa-solid fa-shirt"></i>
+        شوف المنتجات
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="drops-how">
+    <div class="section-header">
+      <p class="section-tag">بسيط جداً</p>
+      <h2>إزاي بيشتغل؟</h2>
+    </div>
+    <div class="drops-steps">
+      <div class="drops-step">
+        <div class="step-num">1</div>
+        <h4>اختار المنتج</h4>
+        <p>تيشرت، هودي، أو بنطلون — اختار النوع والقياس واللون اللي إنت عايزه.</p>
+      </div>
+      <div class="drops-step">
+        <div class="step-num">2</div>
+        <h4>اختار طباعتك</h4>
+        <p>ابعتلنا الطبعة اللي إنت عايزها — سواء صورة، نص، لوجو، أو ديزاين كامل من تصميمنا.</p>
+      </div>
+      <div class="drops-step">
+        <div class="step-num">3</div>
+        <h4>إحنا بنجيب ونطبع</h4>
+        <p>بنجيب الهدمة السادة ونجيب طابعة أو مكان طباعة معتمد، ونطبع الطبعة بالظبط زي ما إنت عايز.</p>
+      </div>
+      <div class="drops-step">
+        <div class="step-num">4</div>
+        <h4>وصلناها لحضرتك</h4>
+        <p>الأوردر بيوصلك على بيتك أو بتجيبه من عندنا — زي ما يناسبك.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="drops-products" id="drops-products">
+    <div class="section-header">
+      <p class="section-tag">منتجاتنا</p>
+      <h2>بتعمل أوردر منين؟</h2>
+    </div>
+    <p class="drops-filter-hint">كل منتج بيجي سادة بأي لون إنت تختاره، وبتضيف عليه طباعتك</p>
+    <div class="products-grid">
+
+      <!-- T-Shirt -->
+      <div class="product-card">
+        <div class="product-visual pv-tshirt">
+          <div class="product-new-badge">🔥 الأكثر طلباً</div>
+          <div class="product-mockup">
+            <div class="mockup-icon">👕</div>
+            <div class="mockup-print-badge">Custom Print</div>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>تيشرت بطباعة مخصصة</h3>
+          <p>تيشرت سادة عالي الجودة، تختار اللون والمقاس، وبنطبع عليه الديزاين بتاعك بجودة DTG أو سيلك سكرين.</p>
+          <div class="product-tags">
+            <span class="product-tag">S - M - L - XL - XXL</span>
+            <span class="product-tag">أي لون</span>
+            <span class="product-tag">قطن 100%</span>
+          </div>
+          <a href="#drops-order" class="product-order-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            اطلب وحدد تفاصيلك
+          </a>
+        </div>
+      </div>
+
+      <!-- Hoodie -->
+      <div class="product-card">
+        <div class="product-visual pv-hoodie">
+          <div class="product-mockup">
+            <div class="mockup-icon">🧥</div>
+            <div class="mockup-print-badge">Custom Print</div>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>هودي بطباعة مخصصة</h3>
+          <p>هودي شبابي فخم سميك، مريح في الشتا والجو المعتدل، بتحدد اللون والمقاس والطبعة اللي تعبر عنك.</p>
+          <div class="product-tags">
+            <span class="product-tag">S - M - L - XL - XXL</span>
+            <span class="product-tag">أي لون</span>
+            <span class="product-tag">فليس داخلي</span>
+          </div>
+          <a href="#drops-order" class="product-order-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            اطلب وحدد تفاصيلك
+          </a>
+        </div>
+      </div>
+
+      <!-- Pants -->
+      <div class="product-card">
+        <div class="product-visual pv-pants">
+          <div class="product-mockup">
+            <div class="mockup-icon">👖</div>
+            <div class="mockup-print-badge">Custom Print</div>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3>بنطلون بطباعة مخصصة</h3>
+          <p>جوجرز أو كارجو شبابية، سادة بأي لون، وبتضيف عليها طبعة على الجيب أو الجانب — لوك مختلف بالكامل.</p>
+          <div class="product-tags">
+            <span class="product-tag">S - M - L - XL</span>
+            <span class="product-tag">أي لون</span>
+            <span class="product-tag">جوجر / كارجو</span>
+          </div>
+          <a href="#drops-order" class="product-order-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            اطلب وحدد تفاصيلك
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CUSTOM PRINT SECTION ===== -->
+  <section class="drops-print" id="drops-print">
+    <div class="print-inner">
+      <div class="print-hook-badge">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        الميزة الكبيرة
+      </div>
+      <h2>اختار <span>طباعتك</span> إنت 🎨</h2>
+      <p>
+        مش زي أي متجر تاني بتلاقي فيه نفس التيشرتات على الكل.
+        عندنا كل أوردر مختلف — إنت اللي بتحدد الطبعة اللي تعبر عنك.
+      </p>
+
+      <div class="print-options">
+        <div class="print-option">
+          <span class="print-option-icon">🖼️</span>
+          <h4>صورة أو ديزاين جاهز</h4>
+          <p>ابعتلنا الملف وبنطبعه بالظبط زي ما هو</p>
+        </div>
+        <div class="print-option">
+          <span class="print-option-icon">✍️</span>
+          <h4>نص أو عبارة</h4>
+          <p>اختار الكلام والخط، وإحنا بنصمم التايبوجرافي</p>
+        </div>
+        <div class="print-option">
+          <span class="print-option-icon">🎨</span>
+          <h4>Lamsa تصمملك</h4>
+          <p>مش عارف إيه الطبعة؟ فريقنا يقترح عليك ديزاين كامل</p>
+        </div>
+        <div class="print-option">
+          <span class="print-option-icon">🏷️</span>
+          <h4>لوجو شركتك أو براندك</h4>
+          <p>مثالي للملابس الموحدة أو الإهداءات المؤسسية</p>
+        </div>
+      </div>
+
+      <div class="print-cta-block">
+        <h3>ابعتلنا على الواتساب وقولنا إيه اللي إنت عايزه</h3>
+        <p>بنرد في أقل من نصف ساعة ونبعتلك سعر وموعد التسليم فوراً</p>
+        <div class="print-steps-row">
+          <div class="print-step-pill">
+            <span class="pill-num">1</span>
+            نوع المنتج واللون
+          </div>
+          <div class="print-step-pill">
+            <span class="pill-num">2</span>
+            المقاس والكمية
+          </div>
+          <div class="print-step-pill">
+            <span class="pill-num">3</span>
+            ملف الطباعة أو الفكرة
+          </div>
+          <div class="print-step-pill">
+            <span class="pill-num">4</span>
+            تسلّم أوردرك 🔥
+          </div>
+        </div>
+        <a href="https://wa.me/201554687020?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C+%D8%B9%D8%A7%D9%8A%D8%B2+%D8%A3%D8%B9%D9%85%D9%84+%D8%A3%D9%88%D8%B1%D8%AF%D8%B1+Drops+%F0%9F%94%A5" target="_blank" class="btn-drops-order">
+          <i class="fa-brands fa-whatsapp"></i>
+          ابدأ أوردرك على الواتساب
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORDER FORM ===== -->
+  <section class="drops-contact" id="drops-order">
+    <div class="drops-contact-inner">
+      <p class="section-tag">اطلب دلوقتي</p>
+      <h2>سجّل أوردرك هنا</h2>
+      <p>املا البيانات وهنتواصل معاك على الواتساب خلال أقل من نصف ساعة بالسعر والتفاصيل 🔥</p>
+
+      <div class="drops-form">
+        <div class="form-group">
+          <label>اسمك</label>
+          <input type="text" id="dropsName" placeholder="اكتب اسمك هنا" required />
+        </div>
+        <div class="form-group">
+          <label>رقم الواتساب</label>
+          <input type="text" id="dropsPhone" placeholder="01XXXXXXXXX" required />
+        </div>
+        <div class="form-group">
+          <label>المنتج اللي عايزه</label>
+          <select id="dropsProduct">
+            <option>تيشرت بطباعة مخصصة</option>
+            <option>هودي بطباعة مخصصة</option>
+            <option>بنطلون بطباعة مخصصة</option>
+            <option>أكثر من منتج (كومبو)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>اللون والمقاس</label>
+          <input type="text" id="dropsColor" placeholder="مثال: أسود — L" />
+        </div>
+        <div class="form-group">
+          <label>وصف الطباعة أو فكرتك</label>
+          <textarea id="dropsDetails" rows="4" placeholder="اكتب إيه الطباعة اللي إنت عايزها، أو قول 'عايز Lamsa تصمملي' وبنقترح عليك..."></textarea>
+        </div>
+        <button class="btn-drops-submit" onclick="submitDropsOrder(event)">
+          <i class="fa-solid fa-paper-plane"></i>
+          أرسل الأوردر 🔥
+        </button>
+      </div>
+
+      <a href="https://wa.me/201554687020?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C+%D8%B9%D8%A7%D9%8A%D8%B2+%D8%A3%D8%B9%D9%85%D9%84+%D8%A3%D9%88%D8%B1%D8%AF%D8%B1+Drops" target="_blank" class="drops-whatsapp-alt">
+        <i class="fa-brands fa-whatsapp"></i>
+        أو ابعتلنا مباشرة على الواتساب
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="drops-footer">
+    <div class="drops-footer-brand">DROPS <span>✦</span> by Lamsa</div>
+    <p>ملابس شبابية بطباعة مخصصة</p>
+    <p>© 2025 Lamsa Creative. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <script>
+    // Navbar scroll effect (reuse)
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.style.padding = '12px 6%';
+        nav.style.background = 'rgba(10,10,10,0.98)';
+      } else {
+        nav.style.padding = '18px 6%';
+        nav.style.background = 'rgba(13,13,13,0.95)';
+      }
+    });
+
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
+
+    function submitDropsOrder(e) {
+      e.preventDefault();
+      const name    = document.getElementById('dropsName').value.trim();
+      const phone   = document.getElementById('dropsPhone').value.trim();
+      const product = document.getElementById('dropsProduct').value;
+      const color   = document.getElementById('dropsColor').value.trim();
+      const details = document.getElementById('dropsDetails').value.trim();
+
+      if (!name || !phone) {
+        alert('من فضلك اكتب اسمك ورقم الواتساب');
+        return;
+      }
+
+      const msg = encodeURIComponent(
+        `🔥 أوردر جديد من Drops!\n\n` +
+        `👤 الاسم: ${name}\n` +
+        `📱 الواتساب: ${phone}\n` +
+        `👕 المنتج: ${product}\n` +
+        `🎨 اللون والمقاس: ${color}\n` +
+        `✏️ الطباعة المطلوبة: ${details}`
+      );
+
+      window.open(`https://wa.me/201554687020?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>
