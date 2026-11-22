@@ -57,6 +57,42 @@ body {
 
 .nav-links a:hover { color: var(--orange); }
 
+.nav-drops-link {
+  background: rgba(255,101,0,0.15) !important;
+  border: 1.5px solid rgba(255,101,0,0.5) !important;
+  color: var(--orange) !important;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 800 !important;
+  transition: all 0.3s !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-drops-link:hover {
+  background: rgba(255,101,0,0.3) !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(255,101,0,0.35);
+}
+
+.nav-agency-link {
+  background: rgba(197, 160, 114, 0.15) !important;
+  border: 1.5px solid rgba(197, 160, 114, 0.5) !important;
+  color: var(--sand-gold, #c5a072) !important;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 800 !important;
+  transition: all 0.3s !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-agency-link:hover {
+  background: rgba(197, 160, 114, 0.3) !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(197, 160, 114, 0.35);
+}
+
 .hamburger {
   display: none; flex-direction: column; gap: 5px; cursor: pointer;
 }
