@@ -72,18 +72,40 @@
       text-transform: uppercase;
     }
 
-    .drops-hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 14px;
-      letter-spacing: -1px;
+    .drops-flow-container {
+      margin-bottom: 22px;
     }
 
-    .drops-hero h1 span {
+    .drops-flow-title {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      line-height: 1.2;
+    }
+
+    .drops-flow-title .flow-word {
+      font-family: 'Cairo', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      font-weight: 900;
+      color: #ffffff;
+      display: inline-block;
+    }
+
+    .drops-flow-title .flow-arrow {
       color: var(--drops-accent);
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      opacity: 0.85;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .drops-flow-title .drop-accent {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--drops-accent);
+      letter-spacing: -1px;
+      text-shadow: 0 0 35px rgba(255,101,0,0.4);
     }
 
     .drops-hero-ar {
@@ -710,7 +732,15 @@
       <i class="fa-solid fa-fire"></i>
       DROPS — ملابس شبابية بطابعك
     </div>
-    <h1>اختار.<br/>صمم.<span> Drop.</span></h1>
+    <div class="drops-flow-container">
+      <h1 class="drops-flow-title">
+        <span class="flow-word">اختار</span>
+        <span class="flow-arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        <span class="flow-word">صمّم</span>
+        <span class="flow-arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        <span class="flow-word drop-accent">Drop 🔥</span>
+      </h1>
+    </div>
     <div class="drops-hero-ar">تيشرتات وهوديز وبنطلونات — بطباعة تعبر عنك</div>
     <p class="drops-hook">
       مش لازم تشتري اللي موجود. عندنا <strong>تيشرتات وهوديز وبنطلونات سادة</strong> باللون اللي إنت عايزه،
@@ -878,7 +908,7 @@
 
       <div class="print-cta-block">
         <h3>ابعتلنا على الواتساب وقولنا إيه اللي إنت عايزه</h3>
-        <p>بنرد في أقل من نصف ساعة ونبعتلك سعر وموعد التسليم فوراً</p>
+        <p>الرد في أقل من نص ساعة ونبعتلك سعر وموعد التسليم فوراً</p>
         <div class="print-steps-row">
           <div class="print-step-pill">
             <span class="pill-num">1</span>
@@ -905,14 +935,17 @@
     </div>
   </section>
 
-  <!-- ===== ORDER FORM ===== -->
+  <!-- ===== ORDER & CONTACT ===== -->
   <section class="drops-contact" id="drops-order">
-    <div class="drops-contact-inner">
+    <div class="section-header" style="text-align: center; margin-bottom: 48px;">
       <p class="section-tag">اطلب دلوقتي</p>
-      <h2>سجّل أوردرك هنا</h2>
-      <p>املا البيانات وهنتواصل معاك على الواتساب خلال أقل من نصف ساعة بالسعر والتفاصيل 🔥</p>
+      <h2>سجّل أوردرك وتواصل معنا</h2>
+      <p class="section-sub">املا بيانات طلبك وسيبها علينا، أو تواصل فوراً 🚀</p>
+    </div>
 
-      <div class="drops-form">
+    <div class="contact-wrapper">
+      <!-- اليمين: الفورم اليدوي للدروبس -->
+      <form class="contact-form" onsubmit="submitDropsOrder(event)">
         <div class="form-group">
           <label>اسمك</label>
           <input type="text" id="dropsName" placeholder="اكتب اسمك هنا" required />
@@ -938,16 +971,23 @@
           <label>وصف الطباعة أو فكرتك</label>
           <textarea id="dropsDetails" rows="4" placeholder="اكتب إيه الطباعة اللي إنت عايزها، أو قول 'عايز Lamsa تصمملي' وبنقترح عليك..."></textarea>
         </div>
-        <button class="btn-drops-submit" onclick="submitDropsOrder(event)">
-          <i class="fa-solid fa-paper-plane"></i>
-          أرسل الأوردر 🔥
+        <button type="submit" class="btn-primary full-width" style="background: var(--drops-accent); border: none; cursor: pointer;">
+          إرسال الأوردر على الواتساب 🚀
         </button>
-      </div>
+      </form>
 
-      <a href="https://wa.me/201554687020?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C+%D8%B9%D8%A7%D9%8A%D8%B2+%D8%A3%D8%B9%D9%85%D9%84+%D8%A3%D9%88%D8%B1%D8%AF%D8%B1+Drops" target="_blank" class="drops-whatsapp-alt">
-        <i class="fa-brands fa-whatsapp"></i>
-        أو ابعتلنا مباشرة على الواتساب
-      </a>
+      <!-- الشمال: زراير السوشيال ميديا المباشرة والاتصال الهاتفي -->
+      <div class="contact-info">
+        <h3>أو تواصل معنا مباشرة</h3>
+        <div class="social-links">
+          <a href="https://wa.me/201554687020?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C+%D8%B9%D8%A7%D9%8A%D8%B2+%D8%A3%D8%B9%D9%85%D9%84+%D8%A3%D9%88%D8%B1%D8%AF%D8%B1+Drops+%F0%9F%94%A5" target="_blank" rel="noopener" class="social-link whatsapp"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+          <a href="https://www.facebook.com/profile.php?id=61596729752735" target="_blank" rel="noopener" class="social-link facebook"><i class="fa-brands fa-facebook"></i> فيسبوك</a>
+          <a href="https://www.instagram.com/lamsa.lamsas/?hl=ar" target="_blank" rel="noopener" class="social-link instagram"><i class="fa-brands fa-instagram"></i> إنستجرام</a>
+          <a href="https://www.tiktok.com/@lamsa.6.16?lang=en" target="_blank" rel="noopener" class="social-link tiktok"><i class="fa-brands fa-tiktok"></i> تيك توك</a>
+          <a href="tel:+201020705557" class="social-link phone-btn"><i class="fa-solid fa-phone"></i> اتصال هاتفي مباشر</a>
+        </div>
+        <div class="response-badge">⚡ الرد في أقل من نص ساعة</div>
+      </div>
     </div>
   </section>
 
