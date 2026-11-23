@@ -286,6 +286,18 @@
       overflow: hidden;
     }
 
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.06);
+    }
+
     .pv-tshirt { background: linear-gradient(135deg, #1a1a1a 0%, #111 100%); }
     .pv-hoodie { background: linear-gradient(135deg, #161a1f 0%, #0d1117 100%); }
     .pv-pants  { background: linear-gradient(135deg, #1a1518 0%, #110e14 100%); }
@@ -844,10 +856,8 @@
       <!-- Hoodie -->
       <div class="product-card">
         <div class="product-visual pv-hoodie">
-          <div class="product-mockup">
-            <div class="mockup-icon">🧥</div>
-            <div class="mockup-print-badge">Custom Print</div>
-          </div>
+          <img src="hoodie-box.jpg" alt="هودي بطباعة مخصصة LAMSA" class="product-img" />
+          <div class="mockup-print-badge" style="position: absolute; bottom: 12px; z-index: 2; background: rgba(0,0,0,0.65); backdrop-filter: blur(8px);">Custom Print</div>
         </div>
         <div class="product-info">
           <h3>هودي بطباعة مخصصة</h3>
